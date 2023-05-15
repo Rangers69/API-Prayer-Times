@@ -1,5 +1,5 @@
 function prayerTimes(latitude,longitude){
-    fetch('http://api.aladhan.com/v1/calendar?latitude='+latitude+'&longitude='+longitude+'&method=2')
+    fetch('http://api.aladhan.com/v1/calendar?latitude='+latitude+'&longitude='+longitude+'&method=4')
     .then(response => response.json())
     .then( function(response){
         // console.log(response.data[0].timings);
@@ -41,7 +41,9 @@ function success(position){
     // console.log(position);
 }
 function error(){
-    alert('posisi tidak dapet diakses');
+    // alert('Auto jakarta');
+    //default lokasi jakarta
+    prayerTimes('-6.200000','106.816666');
 }
 
 function userLocation(){
